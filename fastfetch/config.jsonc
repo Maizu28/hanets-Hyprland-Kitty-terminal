@@ -1,0 +1,121 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/home/hanets/Pictures/theme-custom/terminal/waguri-circle.png",
+    "type": "kitty-direct",
+    "width": 28,
+    "height": 13,
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "separator": " : ",
+    "color": {
+      "keys": "bright_white",
+      "title": "bright_white"
+    },
+    "size": {
+      "ndigits": 0,
+      "maxPrefix": "MB"
+    }
+  },
+  "modules": [
+    // --- HEADER ---
+    {
+      "type": "custom",
+      "format": "{#35}🌸  Kaoruko Waguri"
+    },
+    {
+      "type": "custom",
+      "format": "{#37}╭─────────────────────────────────────────────────────────"
+    },
+    
+    // --- SOFTWARE INFO (Cool Colors: Blue -> Cyan) ---
+    {
+      "type": "os",
+      "key": "│   OS",
+      "keyColor": "34" // Blue
+    },
+    {
+      "type": "kernel",
+      "key": "│   Kernel",
+      "keyColor": "34"
+    },
+    {
+      "type": "packages",
+      "key": "│   Packages",
+      "keyColor": "36" // Cyan
+    },
+    {
+      "type": "display",
+      "key": "│   Display",
+      "keyColor": "36"
+    },
+    {
+      "type": "wm",
+      "key": "│   WM",
+      "keyColor": "32" // Green
+    },
+    {
+      "type": "terminal",
+      "key": "│   Terminal",
+      "keyColor": "32"
+    },
+    {
+      "type": "custom",
+      "format": "{#37}╰───────────────────────────────────────────────────────────"
+    },
+    
+    { "type": "break" },
+
+    // --- HARDWARE INFO (Warm Colors: Yellow -> Red -> Magenta) ---
+    {
+      "type": "title",
+      "format": "{#33}👤  {user-name}@{host-name}" 
+    },
+    {
+      "type": "custom",
+      "format": "{#37}╭───────────────────────────────────────────────────────────"
+    },
+    {
+      "type": "cpu",
+      "key": "│   CPU",
+      "showPeCoreCount": true,
+      "keyColor": "33" // Yellow
+    },
+    {
+      "type": "gpu",
+      "key": "│   GPU",
+      "keyColor": "33"
+    },
+    {
+      "type": "memory",
+      "key": "│   Memory",
+      "keyColor": "31" // Red
+    },
+    {
+        "type": "command",
+        "key": "│   OS Age",
+        "text": "echo $(($(($(date +%s) - $(stat -c %W / | cut -d' ' -f1))) / 86400)) days",
+        "keyColor": "35" // Magenta/Pink
+    },
+    {
+      "type": "uptime",
+      "key": "│   Uptime",
+      "keyColor": "35"
+    },
+    {
+      "type": "custom",
+      "format": "{#37}╰───────────────────────────────────────────────────────────"
+    },
+    
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "padding": { "left": 4 }
+    }
+  ]
+}

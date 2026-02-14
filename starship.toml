@@ -1,0 +1,43 @@
+# ~/.config/starship.toml
+
+# Baris baru setiap habis perintah
+add_newline = true
+
+# Format Layout: 
+# Baris 1: ╭─ Logo Nama at Folder
+# Baris 2: ╰─ Panah
+format = """
+[╭─](bold #a6a6a6)$os$username[ at ](#a6a6a6)$directory$git_branch
+[╰─](bold #a6a6a6)$character"""
+
+# --- MODUL ---
+
+[os]
+disabled = false
+style = "blue bold"
+# Simbol Ubuntu ( ) atau Linux ( )
+# Hapus spasi di awal agar nempel dengan garis
+format = "🌸" 
+
+[username]
+show_always = true
+style_user = "blue bold"
+style_root = "red bold"
+format = " [$user]($style)"
+
+[directory]
+style = "white"
+truncation_length = 3
+truncation_symbol = "…/"
+format = "[$path]($style)"
+
+[character]
+# Panah input
+success_symbol = "[❯](bold blue)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[git_branch]
+symbol = " "
+style = "green"
+format = " [$symbol$branch]($style)"
